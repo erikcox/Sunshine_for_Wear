@@ -16,10 +16,10 @@ This is the repository for the weather app that students build during the [Devel
 
 * [ ] App conforms to common standards found in the [Android Nanodegree General Project Guidelines](http://udacity.github.io/android-nanodegree-guidelines/core.html).
 
-![square watchface](square_watchface.png)
+![square watchface](square_example.png)
 
 *Example of a square watchface*
 
-![round watchface](round_watchface.png)
+![round watchface](round_example.png)
 
 *Example of a round watchface*
