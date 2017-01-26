@@ -15,3 +15,11 @@ This is the repository for the weather app that students build during the [Devel
 * [ ] Watch face obtains weather data by talking with a copy of Sunshine running on a device paired to the watch.
 
 * [ ] App conforms to common standards found in the [Android Nanodegree General Project Guidelines](http://udacity.github.io/android-nanodegree-guidelines/core.html).
+
+![square watchface](square_watchface.png)
+
+*Example of a square watchface*
+
+![round watchface](round_watchface.png)
+
+*Example of a round watchface*
