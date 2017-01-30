@@ -127,6 +127,7 @@ public class SunshineWatchFace extends CanvasWatchFaceService {
                 mTime.setToNow();
             }
         };
+
         private Integer mMinTemp;
         private Integer mMaxTemp;
         private Integer mWeatherId;
@@ -149,6 +150,7 @@ public class SunshineWatchFace extends CanvasWatchFaceService {
          * Whether the display supports fewer bits for each color in ambient mode. When true, we
          * disable anti-aliasing in ambient mode.
          */
+
         boolean mLowBitAmbient;
 
         @Override
