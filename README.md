@@ -33,3 +33,5 @@ This is the repository for the weather app that students build during the [Devel
 * Forward the AVD's communication port to the connected phone (you must do this every time the phone is connected): `adb -d forward tcp:5601 tcp:5601`
 
 * Start the Android Wear app on your phone and connect to the emulator.
+
+For more detailed information, see [this link](https://developer.android.com/training/wearables/apps/creating.html).
