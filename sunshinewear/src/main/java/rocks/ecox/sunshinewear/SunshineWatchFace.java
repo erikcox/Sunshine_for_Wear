@@ -260,7 +260,7 @@ public class SunshineWatchFace extends CanvasWatchFaceService {
         @Override
         public void onPropertiesChanged(Bundle properties) {
             super.onPropertiesChanged(properties);
-            Log.d(TAG, "onPropertiesChanged run..");
+            Log.d(TAG, "onPropertiesChanged");
             boolean burnInProtection = properties.getBoolean(PROPERTY_BURN_IN_PROTECTION, false);
             mLowBitAmbient = properties.getBoolean(PROPERTY_LOW_BIT_AMBIENT, false);
         }
@@ -313,7 +313,7 @@ public class SunshineWatchFace extends CanvasWatchFaceService {
             double centerX = width / 2f;
             double centerY = height / 2f;
 
-            int lineLength = width/4;
+            int lineLength = width;
             canvas.drawLine((float) centerX-lineLength/2, (float) centerY, (float) centerX+lineLength/2, (float) centerY, mTextLightPaint);
 
             float topTextBaselineOffset = height/2/5;
@@ -364,6 +364,7 @@ public class SunshineWatchFace extends CanvasWatchFaceService {
                 float offsetTextPx = (artPx - mMaxTempHeight) / 2f;
                 float textBaselinePx = (float) centerY + artMarginPx + artPx - offsetTextPx;
                 int weatherInfoSpacing = (int) ((width - artPx - mMinTempWidth - mMaxTempWidth) / 4);
+
                 if (mWeatherId != null) {
                     int weatherImage = Utility.getArtResourceForWeatherCondition(mWeatherId);
                     Drawable weatherArt = ResourcesCompat.getDrawable(getResources(), weatherImage, null);
@@ -403,7 +404,7 @@ public class SunshineWatchFace extends CanvasWatchFaceService {
 
         @Override
         public void onConnected(Bundle bundle) {
-            Log.d(TAG, "onConnected running...");
+            Log.d(TAG, "Connected");
             if (Log.isLoggable(TAG, Log.DEBUG)) {
                 Log.d(TAG, "onConnected: " + bundle);
             }
@@ -412,12 +413,12 @@ public class SunshineWatchFace extends CanvasWatchFaceService {
 
         @Override
         public void onConnectionSuspended(int i) {
-            Log.d(TAG, "onConnectionSuspended running...");
+            Log.d(TAG, "Connection suspended");
         }
 
         @Override
         public void onDataChanged(DataEventBuffer dataEventBuffer) {
-            Log.d(TAG, "onDataChanged");
+            Log.d(TAG, "Data changed");
             for (DataEvent event : dataEventBuffer) {
 
                 DataItem dataItem = event.getDataItem();
@@ -438,7 +439,7 @@ public class SunshineWatchFace extends CanvasWatchFaceService {
         }
         @Override
         public void onConnectionFailed(ConnectionResult connectionResult) {
-            Log.d(TAG, "onConnectionFailed running...");
+            Log.d(TAG, "Connection failed");
 
         }
     }
