@@ -21,6 +21,10 @@
     <uses-permission android:name="android.permission.INTERNET"/>
     <!-- Required to act as a custom watch face. -->
     <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <!-- Permissions required by the sync adapter -->
+    +    <uses-permission android:name="android.permission.READ_SYNC_SETTINGS" />
+    +    <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS" />
+    +    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />gst
 
     <application
         android:allowBackup="true"
