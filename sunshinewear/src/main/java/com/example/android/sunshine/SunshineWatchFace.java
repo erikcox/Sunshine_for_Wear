@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package rocks.ecox.sunshinewear;
+package com.example.android.sunshine;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -322,7 +322,7 @@ public class SunshineWatchFace extends CanvasWatchFaceService {
 
             mTime.setToNow();
             String time = String.format("%d:%02d", mTime.hour, mTime.minute);
-            Integer weekDay = Utility.getDay(mTime.weekDay);
+            Integer weekDay = com.example.android.sunshine.Utility.getDay(mTime.weekDay);
             String weekDayAbbrev;
             if (weekDay != null) {
                 weekDayAbbrev = getResources().getString(weekDay);
@@ -331,7 +331,7 @@ public class SunshineWatchFace extends CanvasWatchFaceService {
                 weekDayAbbrev = "";
             }
 
-            Integer yearMonth = Utility.getMonth(mTime.month);
+            Integer yearMonth = com.example.android.sunshine.Utility.getMonth(mTime.month);
             String yearMonthAbbrev;
 
             float topMargin = 30;
@@ -368,7 +368,7 @@ public class SunshineWatchFace extends CanvasWatchFaceService {
                 int weatherInfoSpacing = (int) ((width - artPx - mMinTempWidth - mMaxTempWidth) / 4);
 
                 if (mWeatherId != null) {
-                    int weatherImage = Utility.getArtResourceForWeatherCondition(mWeatherId);
+                    int weatherImage = com.example.android.sunshine.Utility.getArtResourceForWeatherCondition(mWeatherId);
                     Drawable weatherArt = ResourcesCompat.getDrawable(getResources(), weatherImage, null);
                     weatherArt.setBounds((int) (weatherInfoSpacing),
                             (int) (centerY + artMarginPx), (int) (weatherInfoSpacing + artPx), (int) (centerY + artPx + artMarginPx));

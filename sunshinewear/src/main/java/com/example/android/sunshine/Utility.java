@@ -1,7 +1,7 @@
-package rocks.ecox.sunshinewear;
+package com.example.android.sunshine;
 
-import java.util.Date;
 import java.text.DateFormat;
+import java.util.Date;
 
 public class Utility {
 
