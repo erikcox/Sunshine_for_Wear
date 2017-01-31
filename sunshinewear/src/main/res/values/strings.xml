@@ -2,6 +2,10 @@
     <string name="app_name">SunshineWear</string>
     <string name="message">Watch face tapped</string>
     <string name="my_digital_name">Sunshine Digital</string>
+    <string name="data_path">/weather</string>
+
+    <string name="am">am</string>
+    <string name="pm">/pm</string>
 
     <string name="day0">SUN</string>
     <string name="day1">MON</string>
