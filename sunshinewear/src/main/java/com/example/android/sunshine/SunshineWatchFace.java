@@ -107,7 +107,7 @@ public class SunshineWatchFace extends CanvasWatchFaceService {
     private class Engine extends CanvasWatchFaceService.Engine implements
             GoogleApiClient.ConnectionCallbacks
             , GoogleApiClient.OnConnectionFailedListener
-            , DataApi.DataListener{
+            , DataApi.DataListener {
         final Handler mUpdateTimeHandler = new EngineHandler(this);
         boolean mRegisteredTimeZoneReceiver = false;
         Paint mBackgroundPaint;
@@ -207,15 +207,12 @@ public class SunshineWatchFace extends CanvasWatchFaceService {
             if (visible) {
                 registerReceiver();
 
-                // Update time zone in case it changed while we weren't visible.
                 mCalendar.setTimeZone(TimeZone.getDefault());
                 invalidate();
             } else {
                 unregisterReceiver();
             }
 
-            // Whether the timer should be running depends on whether we're visible (as well as
-            // whether we're in ambient mode), so we may need to start or stop the timer.
             updateTimer();
         }
 
@@ -281,28 +278,23 @@ public class SunshineWatchFace extends CanvasWatchFaceService {
                 invalidate();
             }
 
-            // Whether the timer should be running depends on whether we're visible (as well as
-            // whether we're in ambient mode), so we may need to start or stop the timer.
             updateTimer();
         }
 
 
         @Override
         public void onDraw(Canvas canvas, Rect bounds) {
-            // Draw the background.
             if (isInAmbientMode()) {
                 canvas.drawColor(Color.BLACK);
             } else {
                 canvas.drawRect(0, 0, bounds.width(), bounds.height(), mBackgroundPaint);
             }
 
-            // H:MM in ambient mode and H:MM:SS in interactive mode.
             long currentTime = System.currentTimeMillis();
             mCalendar.setTimeInMillis(currentTime);
             mCurrentDate.setTime(currentTime);
 
             DateFormat dateFormat = DateFormat.getDateInstance();
-
             SimpleDateFormat simpleDateFormat = new SimpleDateFormat("EEE");
             String dayOfWeek = simpleDateFormat.format(mCurrentDate);
 
@@ -319,25 +311,17 @@ public class SunshineWatchFace extends CanvasWatchFaceService {
             mTextPaint.getTextBounds(textTime,0,textTime.length(),textBounds);
             canvas.drawText(textTime,bounds.centerX()-textBounds.width()/2, bounds.centerY()-40, mTextPaint);
 
-
-
-            if(mAmbient == false)
-            {
-                // draw current date
+            if(mAmbient == false) {
                 mDatePaint.getTextBounds(textDate,0,textDate.length(),textBounds);
                 canvas.drawText(textDate,bounds.centerX()-textBounds.width()/2,bounds.centerY()-20 + 30,mDatePaint);
 
-                // draw horizontal line
                 canvas.drawLine(bounds.centerX()-20,bounds.centerY()-20+50,bounds.centerX()+20,bounds.centerY()-20+50,mDatePaint);
 
-                // set weather bitmap
-                if(bitmapWeather!=null)
-                {
+                if(bitmapWeather!=null) {
                     canvas.drawBitmap(bitmapWeather,null,new RectF(bounds.centerX()-100,bounds.centerY()+10+10,bounds.centerX(),bounds.centerY()+90+10),null);
                 }
 
-                if(maxTemp!=null&&minTemp!=null)
-                {
+                if(maxTemp!=null&&minTemp!=null) {
                     minTempPaint.getTextBounds(minTemp,0,minTemp.length(),textBounds);
                     canvas.drawText(minTemp,bounds.centerX()+80-textBounds.width()/2,bounds.centerY()-20+90,minTempPaint);
 
