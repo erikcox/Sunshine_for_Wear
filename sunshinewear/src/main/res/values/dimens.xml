@@ -16,4 +16,12 @@
     <dimen name="digital_divider_y_offset_round">135dp</dimen>
     <dimen name="digital_weather_y_offset">160dp</dimen>
     <dimen name="digital_weather_y_offset_round">170dp</dimen>
+
+    <dimen name="digital_text_size_small">15sp</dimen>
+    <dimen name="digital_text_size_round_small">15sp</dimen>
+    <dimen name="digital_text_size_large">45sp</dimen>
+    <dimen name="digital_text_size_round_large">45dp</dimen>
+    <dimen name="digital_x_offset">15dp</dimen>
+    <dimen name="digital_x_offset_round">20dp</dimen>
+    <dimen name="digital_y_offset">40dp</dimen>
 </resources>
