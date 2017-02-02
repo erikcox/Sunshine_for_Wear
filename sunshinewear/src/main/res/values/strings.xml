@@ -1,31 +1,5 @@
 <resources>
-    <string name="app_name">SunshineWear</string>
+    <string name="app_name">WatchFace</string>
     <string name="message">Watch face tapped</string>
-    <string name="my_digital_name">Sunshine Digital</string>
-    <string name="data_path">/weather</string>
-
-    <string name="am">am</string>
-    <string name="pm">/pm</string>
-
-    <string name="day0">SUN</string>
-    <string name="day1">MON</string>
-    <string name="day2">TUE</string>
-    <string name="day3">WED</string>
-    <string name="day4">THU</string>
-    <string name="day5">FRI</string>
-    <string name="day6">SAT</string>
-
-    <string name="month0">JAN</string>
-    <string name="month1">FEB</string>
-    <string name="month2">MAR</string>
-    <string name="month3">APR</string>
-    <string name="month4">MAY</string>
-    <string name="month5">JUN</string>
-    <string name="month6">JUL</string>
-    <string name="month7">AUG</string>
-    <string name="month8">SEP</string>
-    <string name="month9">OCT</string>
-    <string name="month10">NOV</string>
-    <string name="month11">DEC</string>
-
+    <string name="my_digital_name">SunShine</string>
 </resources>
