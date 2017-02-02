@@ -60,8 +60,6 @@ public class MainActivity extends AppCompatActivity implements
         GoogleApiClient.OnConnectionFailedListener,
         DataApi.DataListener{
 
-//    private final String TAG = MainActivity.class.getSimpleName();
-
     /*
      * The columns of data that we are interested in displaying within our MainActivity's list of
      * weather data.
@@ -99,14 +97,13 @@ public class MainActivity extends AppCompatActivity implements
 
     private ProgressBar mLoadingIndicator;
 
-    // WatchFace
-    private static final String COUNT_KEY = "com.eaxmple.key.count";
+    // Watch face variables
+    private static final String COUNT_KEY = "com.example.key.count";
     private static final String COUNT_PATH = "/count";
     private static final String TEMPERATURE_PATH = "/temperature";
     private GoogleApiClient mGoogleApiClient;
     private ScheduledExecutorService mSEService;
     private ScheduledFuture<?> mScheduledFuture;
-    // WatchFace
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -182,7 +179,7 @@ public class MainActivity extends AppCompatActivity implements
 
         SunshineSyncUtils.initialize(this);
 
-        // WatchFace
+        // Callback for watch face
         mSEService = new ScheduledThreadPoolExecutor(1);
         mGoogleApiClient = new GoogleApiClient.Builder(this)
                 .addApi(Wearable.API)
@@ -191,7 +188,6 @@ public class MainActivity extends AppCompatActivity implements
                 .build();
 
         mGoogleApiClient.connect();
-        // WatchFace
     }
 
     /**
@@ -382,8 +378,7 @@ public class MainActivity extends AppCompatActivity implements
         return super.onOptionsItemSelected(item);
     }
 
-    // WatchFace
-
+    // Watch face setup
     private String TAG = "WatchFace";
 
     @Override
@@ -439,5 +434,4 @@ public class MainActivity extends AppCompatActivity implements
         Wearable.DataApi.putDataItem(mGoogleApiClient, putDataRequest);
 
     }
-    // WatchFace
 }

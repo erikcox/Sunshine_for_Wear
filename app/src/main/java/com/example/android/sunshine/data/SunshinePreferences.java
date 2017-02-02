@@ -28,6 +28,7 @@ public final class SunshinePreferences {
      * store the latitude and longitude. We will also use the latitude and longitude to create
      * queries for the weather.
      */
+
     public static final String PREF_COORD_LAT = "coord_lat";
     public static final String PREF_COORD_LONG = "coord_long";
 
