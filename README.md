@@ -25,6 +25,7 @@ This is the repository for the weather app that students build during the [Devel
 *Example of a round watchface*
 
 *Final watchface*
+
 ![final watchface](sunshinewear/src/main/res/drawable-nodpi/preview.png)
 
 ## Tips for connecting to emulator
