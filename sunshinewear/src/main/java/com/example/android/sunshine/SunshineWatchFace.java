@@ -311,7 +311,7 @@ public class SunshineWatchFace extends CanvasWatchFaceService {
             mTextPaint.getTextBounds(textTime,0,textTime.length(),textBounds);
             canvas.drawText(textTime,bounds.centerX()-textBounds.width()/2, bounds.centerY()-40, mTextPaint);
 
-            if(mAmbient == false) {
+            if(!mAmbient) {
                 mDatePaint.getTextBounds(textDate,0,textDate.length(),textBounds);
                 canvas.drawText(textDate,bounds.centerX()-textBounds.width()/2,bounds.centerY()-20 + 30,mDatePaint);
 
